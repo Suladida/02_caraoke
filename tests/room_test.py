@@ -4,75 +4,50 @@ from classes.guest import Guest
 from classes.room import Room
 from classes.song import Song
 
-
 class TestRoom(unittest.TestCase):
     def setUp(self):
-        self.room1 = Room(11, 15.00)
-        self.room2 = Room(12, 30.00)
-        self.rooms = [self.room1, self.room2]
-        self.new_guest = {"name" : "Trixie", "cash" : 5000}
-
+        self.room = Room("Room 01")
 
     # @unittest.skip("Delete this line to run the test")
-    def test_check_room_price(self):
-        self.assertEqual(15.00, self.room1.price)
+    def test_check_room_empty(self):
+        self.assertEqual(0, self.room.check_room_occupancy())
 
-
-
-
-#TASKS ---
-
-
-# # ADD GUEST TO ROOM
+    @unittest.skip("Delete this line to run the test")
+    def test_check_room_occupancy(self):
+        self.assertEqual(1, self.room.check_room_occupancy())
+    
     # @unittest.skip("Delete this line to run the test")
-    def test_guest_check_in(self):
-        self.rooms.guest_check_in(self.new_guest)
-        self.assertEqual(2, len(self.check_room_guests(self.new_guest)))
+    def test_add_guest_to_list(self):
+        new_guest = Guest("Katya")
+        self.room.add_guest_to_list(self.room)
+        self.room.add_guest_to_list(new_guest)
+        self.assertEqual(2, self.room.check_room_occupancy())
 
+# #TASKS---
 
+# #ADD GUEST TO ROOM
+#     # @unittest.skip("Delete this line to run the test")
+#     def test_add_guest_to_room(self):
+#         self.add_guest_to_room(self.guest)
+#         print (self.room.check_room_occupancy())
+#         self.assertEqual(1, self.room.check_room_occupancy())
+        
 
+#     def test_check_room_occupancy(self):
+#         self.room.check_room_occupancy()
 
-# CREATE NEW ROOM
-
-    @unittest.skip("Delete this line to run the test")
-    def test_add_room(self):
-        new_room = Room(13, 40.00)
-        self.rooms.add_room(new_room)
-        # self.assertEqual(3, len(self.rooms))
-
-
-
-
-# CHECK GUEST INTO ROOM
-
-    @unittest.skip("Delete this line to run the test")
-    def test_guest_check_in(self):
-        self.assertEqual(0, self.room1.guest_check_in())
-
-# CHECK GUEST OUT OF ROOM 
-
-    @unittest.skip("Delete this line to run the test")
-    def test_guest_check_out(self):
-        self.assertEqual(0, self.room1.guest_check_out())
-
-# ADD SONG TO ROOM PLAYLIST
-
-    @unittest.skip("Delete this line to run the test")
-    def test_add_song_to_room(self):
-        self.assertEqual(0, self.room1.guest_check_out())
+# #REMOVE GUEST FROM ROOM
 
 
 
 
 
-
-
-
-    # @unittest.skip("Delete this line to run the test")
-    # def (self):
-    #     self.assertEqual(,)
+#ADD SONG TO ROOM
 
 
 
 
 
+    # # @unittest.skip("Delete this line to run the test")
+    # def test_has_route_number(self):
+    #     self.assertEqual(22, self.bus.route_number)
