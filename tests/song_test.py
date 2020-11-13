@@ -6,4 +6,5 @@ from classes.song import Song
 
 class TestSong(unittest.TestCase):
     def setUp(self):
-        self.song = Song("Reasons To Be Cheerful Part 3", "Ian Dury and The Blockheads")
+        self.title = title
+        self.artist = artist
