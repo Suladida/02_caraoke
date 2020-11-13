@@ -7,11 +7,19 @@ from classes.room import Room
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
-        self.room1 = Room(11,15.00, 2)
-        self.room2 = Room(12,40,4)
-        self.room3 = Room(13, 40, 8)
+        self.room = Room(11, 15.00)
+        self.room1 = Room(12, 30.00)
 
-    
-    
-    
-    # self.assertEqual(EXPECTED, ACTUAL)
+    # @unittest.skip("Delete this line to run the test")
+    def test_hello(self):
+        self.assertEqual("Hello!", self.room.hello())
+
+    # @unittest.skip("Delete this line to run the test")
+    def test_check_guest_wallet(self):
+        self.assertEqual(15.00, self.room.get_room_price(11))
+
+    # @unittest.skip("Delete this line to run the test")
+
+
+
+
