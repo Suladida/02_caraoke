@@ -10,18 +10,7 @@ class Room:
     def add_guest_to_list(self, new_guest):
         self._guests.append(new_guest)
 
-
-
-
-
-
-
-
-
-
-
-
-
-    # def add_guest_to_room(self, new_guest):
-    #     self._guests += (new_guest)
-    #     return self._guests
+    def remove_guest_from_list(self, guest_name):
+        for guest in list(self._guests):
+            if guest == guest_name:
+                self._guests.remove(guest)

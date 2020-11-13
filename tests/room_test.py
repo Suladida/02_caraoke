@@ -7,8 +7,10 @@ from classes.song import Song
 class TestRoom(unittest.TestCase):
     def setUp(self):
         self.room = Room("Room 01")
+        self.guest = Guest("Katya")
+        self.guest2 = Guest("Trixie")
 
-    # @unittest.skip("Delete this line to run the test")
+    @unittest.skip("Delete this line to run the test")
     def test_check_room_empty(self):
         self.assertEqual(0, self.room.check_room_occupancy())
 
@@ -16,38 +18,22 @@ class TestRoom(unittest.TestCase):
     def test_check_room_occupancy(self):
         self.assertEqual(1, self.room.check_room_occupancy())
     
-    # @unittest.skip("Delete this line to run the test")
+    @unittest.skip("Delete this line to run the test")
     def test_add_guest_to_list(self):
-        new_guest = Guest("Katya")
-        self.room.add_guest_to_list(self.room)
-        self.room.add_guest_to_list(new_guest)
+        self.room.add_guest_to_list(self.guest)
+        self.room.add_guest_to_list(self.guest2)
         self.assertEqual(2, self.room.check_room_occupancy())
 
-# #TASKS---
+    # @unittest.skip("Delete this line to run the test")
+    def test_remove_guest_from_list(self):
+        self.room.add_guest_to_list(self.guest)
+        self.room.add_guest_to_list(self.guest2)
+        self.room.remove_guest_from_list(self.guest)
+        self.assertEqual(1, self.room.check_room_occupancy())
 
-# #ADD GUEST TO ROOM
-#     # @unittest.skip("Delete this line to run the test")
-#     def test_add_guest_to_room(self):
-#         self.add_guest_to_room(self.guest)
-#         print (self.room.check_room_occupancy())
-#         self.assertEqual(1, self.room.check_room_occupancy())
-        
+    @unittest.skip("Delete this line to run the test")
+    def test_add_song_to_room(self):
+        self.room.add_song_to_room()
 
-#     def test_check_room_occupancy(self):
-#         self.room.check_room_occupancy()
+#ADD SONG TO ROOM:
 
-# #REMOVE GUEST FROM ROOM
-
-
-
-
-
-#ADD SONG TO ROOM
-
-
-
-
-
-    # # @unittest.skip("Delete this line to run the test")
-    # def test_has_route_number(self):
-    #     self.assertEqual(22, self.bus.route_number)
