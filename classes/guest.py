@@ -9,6 +9,13 @@ class Guest:
             else:
                 return "Guest not found."
 
+    # def add_to_guests(self, new_guest):
+    #         self.guests.append(new_guest)
+    #         pass
+
+    # def count_guests(self):
+    #     return len(self.guests)
+
 
 
 

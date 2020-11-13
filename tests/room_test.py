@@ -10,21 +10,38 @@ class TestRoom(unittest.TestCase):
         self.room1 = Room(11, 15.00)
         self.room2 = Room(12, 30.00)
         self.rooms = [self.room1, self.room2]
+        self.new_guest = {"name" : "Trixie", "cash" : 5000}
 
 
     # @unittest.skip("Delete this line to run the test")
     def test_check_room_price(self):
         self.assertEqual(15.00, self.room1.price)
 
+
+
+
 #TASKS ---
+
+
+# # ADD GUEST TO ROOM
+    # @unittest.skip("Delete this line to run the test")
+    def test_guest_check_in(self):
+        self.rooms.guest_check_in(self.new_guest)
+        self.assertEqual(2, len(self.check_room_guests(self.new_guest)))
+
+
+
 
 # CREATE NEW ROOM
 
     @unittest.skip("Delete this line to run the test")
     def test_add_room(self):
         new_room = Room(13, 40.00)
-        self.room1.add_room(new_room)
-        self.assertEqual(3, len(self.rooms))
+        self.rooms.add_room(new_room)
+        # self.assertEqual(3, len(self.rooms))
+
+
+
 
 # CHECK GUEST INTO ROOM
 
